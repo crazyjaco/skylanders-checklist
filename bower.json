@@ -1,0 +1,25 @@
+{
+  "name": "skylanders-checklist",
+  "version": "1.2.2",
+  "homepage": "http://github.com/crazyjaco/skylanders-checklist",
+  "authors": [
+    "crazyjaco <crazyjac0@gmail.com>"
+  ],
+  "description": "Skylanders figure checklist app",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0"
+  }
+}

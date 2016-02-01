@@ -10,6 +10,11 @@ var skylandersApp = angular.module('skylandersApp', []);
 				id: 0,
 				name: "Skylanders: Spyro's Adventure",
 				logo: "images/ssa-logo-large.png"
+			},		
+			{
+				id: 0,
+				name: "Skylanders: Spyro's Adventure",
+				logo: "images/ssa-logo-large.png"
 			},
 			{
 				id: 1,
@@ -19,7 +24,7 @@ var skylandersApp = angular.module('skylandersApp', []);
 			{
 				id: 2,
 				name: "Skylanders: Swap Force",
-				logo: "images/swap-force-logo-large.png.png"
+				logo: "images/swap-force-logo-large.png"
 			},
 			{
 				id: 3,

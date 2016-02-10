@@ -4,23 +4,21 @@
 		<meta charset="utf-8">
 		<title>Skylanders Checklist</title>
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="style.css">
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-route/angular-route.js"></script>
 		<script src="js/controllers.js"></script>
 	</head>
 	<body ng-controller="SkylanderListCtrl">
-{{ "This is my " + "page." }}
-{{ characters }}
-		<li ng-repeat="skylander in skylanders.characters">
-			<span ng-switch="skylander.game">
-				<span class="game" ng-switch-when="0">Skylanders: Spyro's Adventure</span>
-				<span class="game" ng-switch-when="1">Skylanders: Giants</span>
-				<span class="game" ng-switch-when="2">Skylanders: Swap Force</span>
-				<span class="game" ng-switch-when="3">Skylanders: Trap Team</span>
-				<span class="game" ng-switch-when="4">Skylanders: Superchargers</span>
-				<span class="game" ng-switch-default>Game Not Found.</span>
-			</span> | 
-			<span class="id">{{skylander.id}}</span> | <span class="tag-line">{{skylander.tagline}}</span>
-		</li>
+		Search: <input ng-model="search">
+		<ul id="character-listing" class=".container-fluid">
+			<li ng-repeat="skylander in skylanders.characters | filter:{ id: search }" class="row">
+				<span class="game-logo"><img src="{{ games[skylander.game].logo }}"></span> | 
+				<span class="id">{{skylander.nameHonorific + ' ' + skylander.nameBase }}</span> | 
+				<!-- <span class="toy-image"><img src="http://skylanders.com/content/dam/atvi/skylanders/base/characters-v2/toy/{{ skylander.id }}.png"></span> -->
+				<span class="toy-image"><img src="images/toys/{{ skylander.id }}.png"></span>
+				<!--<span class="tag-line">{{skylander.tagline}}</span>-->
+			</li>
+		</ul>
 	</body>
 </html>

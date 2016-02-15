@@ -2,23 +2,43 @@
 <html lang="en" ng-app="skylandersApp">
 	<head>
 		<meta charset="utf-8">
-		<title>Skylanders Checklist</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Skylander Collector</title>
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="js/app.js"></script>
 		<script src="js/controllers.js"></script>
+
 	</head>
-	<body ng-controller="SkylanderListCtrl">
-		Search: <input ng-model="search">
-		<ul id="character-listing" class=".container-fluid">
-			<li ng-repeat="skylander in skylanders.characters | filter:{ id: search }" class="row">
-				<span class="game-logo"><img src="{{ games[skylander.game].logo }}"></span> | 
-				<span class="id">{{skylander.nameHonorific + ' ' + skylander.nameBase }}</span> | 
-				<!-- <span class="toy-image"><img src="http://skylanders.com/content/dam/atvi/skylanders/base/characters-v2/toy/{{ skylander.id }}.png"></span> -->
-				<span class="toy-image"><img src="images/toys/{{ skylander.id }}.png"></span>
-				<!--<span class="tag-line">{{skylander.tagline}}</span>-->
-			</li>
-		</ul>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Skylander Collector</a>
+				</div>
+		    	<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Checklist</a></li>
+						<li><a href="#">Characters</a></li>
+						<li><a href="#">Portals</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>		
+
+		<div ng-view></div>
 	</body>
 </html>

@@ -1,11 +1,34 @@
 var skylandersControllers = angular.module('skylandersControllers', []);
 
-skylandersControllers.controller('SkylanderListCtrl', [ '$scope', '$routeParams', '$http', 
+skylandersControllers.controller('SkylanderAppCtrl', [ '$scope', '$routeParams', '$http', 
 	function ($scope, $routeParams, $http) {
+		var skychars;
+
 		if(!$scope.skylandersRaw){
+			// Populate the raw file character data
 			$http.get('data/characters-v2-json.json').success(function(data) {
 				$scope.skylandersRaw = data;
 				console.log( 'Data: ', data );
+
+				// Populate 'Associative Array' of character objects and Family Array
+				// Needs to be within 'success' promise for $http.get() call.
+				$scope.skylanders = {};
+				$scope.skylandersFamilies = Array();
+				skychars = $scope.skylandersRaw.characters;
+				// Loop through each character in the character array.
+				for (var idx in skychars ) {
+					// Create new object with name slugs as indexes.
+					$scope.skylanders[skychars[idx].id] = skychars[idx];
+					// Establish family trees (variants of characters).	
+					if (skychars[idx].hasOwnProperty('family')) {
+						// If family doesn't exist yet, instantiate it.
+						if( ! $scope.skylandersFamilies[skychars[idx].family] ) {
+							$scope.skylandersFamilies[skychars[idx].family] = Array();
+						}
+						// Add member to family.
+						$scope.skylandersFamilies[data.characters[idx].family].push( skychars[idx].id );
+					}
+				};				
 			});
 		}
 
@@ -41,42 +64,24 @@ skylandersControllers.controller('SkylanderListCtrl', [ '$scope', '$routeParams'
 				logo: "images/superchargers-logo-large.png"
 			},				
 		];
-
 	}
+]);
+
+skylandersControllers.controller('SkylanderListCtrl', [ '$scope', '$routeParams', '$http', 
+	// function ($scope, $routeParams, $http) {
+
+	// }
 ]);
 
 skylandersControllers.controller('SkylanderDetailCtrl', [ '$scope', '$routeParams', '$http', 
 	function ($scope, $routeParams, $http){
-		if(!$scope.skylandersRaw){
-			$http.get('data/characters-v2-json.json').success(function(data) {
-				$scope.skylandersRaw = data;
-				console.log('reassigned raw data');
-			});
-		}
 
-		// Loop through each character in the character array.
-		for (var idx in $scope.skylandersRaw ) {
-			// console.log('index: ' + idx, 'id: ' + data.characters[idx].id, 'data: ' + data.characters[idx]);
-			// Create new object with name slugs as indexes.
-			$scope.skylanders[data.characters[idx].id] = data.characters[idx];
-			// Establish family trees (variants of characters).	
-			if (data.characters[idx].hasOwnProperty('family')) {
-				console.log('families type', typeof $scope.skylandersFamilies );
-				if( ! $scope.skylandersFamilies[data.characters[idx].family] ) {
-					$scope.skylandersFamilies[data.characters[idx].family] = Array();
-				}
-				$scope.skylandersFamilies[data.characters[idx].family].push( data.characters[idx].id );
-			}
-		};
-		console.log('Parsed', $scope.skylanders );
-		console.log('Families', $scope.skylandersFamilies );
-		// $scope.skylandersFamilies = Array();
-		// $scope.skylandersFamilies = skylandersFamilies;
-		// $scope.skylanders = skylandersParsed;
-
-		$scope.setSelectedSkylander = function(){
+		$scope.setSelectedSkylander = function( $routeParams ){
 			$scope.selectedSkylanderId = $routeParams.skylanderId;
-		//$scope.selectedSkylander = $scope.skylanders[$routeParams.skylanderId];
+			$scope.selectedSkylander = $scope.skylanders[$routeParams.skylanderId];
+			console.log('Selected Skylander:', $scope.skylanders);
 		}
+
+		$scope.setSelectedSkylander( $routeParams );
 	}
 ]);

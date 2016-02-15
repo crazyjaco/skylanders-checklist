@@ -14,7 +14,7 @@ skylandersApp.config(['$routeProvider',
 		}).
 		when('/characters/:skylanderId', {
 			templateUrl: 'partials/character-detail.html',
-			controller: 'SkylanderListCtrl'
+			controller: 'SkylanderDetailCtrl'
 		}).
 		otherwise({
 			redirectTo: '/characters'

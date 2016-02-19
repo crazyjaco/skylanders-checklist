@@ -68,9 +68,9 @@ skylandersControllers.controller('SkylanderAppCtrl', [ '$scope', '$routeParams',
 ]);
 
 skylandersControllers.controller('SkylanderListCtrl', [ '$scope', '$routeParams', '$http', 
-	// function ($scope, $routeParams, $http) {
-
-	// }
+	function ($scope, $routeParams, $http) {
+		console.log('got here');
+	}
 ]);
 
 skylandersControllers.controller('SkylanderDetailCtrl', [ '$scope', '$routeParams', '$http', 

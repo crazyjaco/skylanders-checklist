@@ -1,9 +1,11 @@
-<div class="tpl-detail" ng-controller="SkylanderDetailCtrl">
-	<img ng-src="images/toys/{{ selectedSkylander.id }}.png" class="">
+<div class="tpl-detail">
+	<div class="toy-image-container"><img ng-src="images/toys/{{ selectedSkylander.id }}.png" class="toy-image"></div>
 
 	<h1>{{ selectedSkylander.nameHonorific + ' ' + selectedSkylander.nameBase }}</h1>
 
-	<p>{{selectedSkylander.description}}</p>
+	<p>{{selectedSkylander.tagline}}</p>
+	<p>{{selectedSkylander.story.start}}</p>
+	{{selectedSkylander.story.body}}
 
 	<!-- <ul class="phone-thumbs">
 	  <li ng-repeat="img in phone.images">

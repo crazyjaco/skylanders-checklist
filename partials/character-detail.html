@@ -1,24 +1,25 @@
 <div class="tpl-detail">
 	<header>
-		<div class="detail-toy-image-container"><img ng-src="images/toys/{{ selectedSkylander.id }}.png" class="detail-toy-image"></div>
+		<div class="detail-toy-image-container">
+			<a ng-href="images/toys/{{ selectedSkylander.id }}.png">
+				<img ng-src="images/toys/{{ selectedSkylander.id }}.png" class="detail-toy-image">
+			</a>
+		</div>
 		<div class="detail-title-byline-container">
 			<h1 class="detail-character-name">{{ selectedSkylander.nameHonorific + ' ' + selectedSkylander.nameBase }}</h1>
 			<h2>{{selectedSkylander.tagline}}</h2>
 		</div>
 	</header>
-	<p>{{selectedSkylander.story.start}}</p>
-	{{selectedSkylander.story.body}}
-
-	<!-- <ul class="phone-thumbs">
-	  <li ng-repeat="img in phone.images">
-	    <img ng-src="{{img}}">
-	  </li>
-	</ul> -->
-
 	<ul class="details-stats-list">
-	  <li ng-repeat="stat_name in stat_names track by $index" >
-	    <span>{{ stat_name }}: </span>
-	    <span>{{ selectedSkylander.stats[$index] }}</span>
-	  </li>
-	</ul>
+		<li ng-repeat="stat_name in stat_names track by $index" ng-show="!$last">
+			<span>{{ stat_name }}: </span>
+			<span>{{ selectedSkylander.stats[$index] }}</span>
+			<div class="stat-container" style="width: 200px;">
+				<div class="stat-bar" style="width: {{ ( selectedSkylander.stats[$index] / selectedSkylander.stats[4] ) * 200 }}px;">
+			</div>
+		</li>
+	</ul>	
+	<p>{{ selectedSkylander.story.start }}</p>
+	{{ selectedSkylander.story.body }}
+
 </div>

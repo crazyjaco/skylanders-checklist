@@ -1,9 +1,11 @@
 <div class="tpl-detail">
-	<div class="toy-image-container"><img ng-src="images/toys/{{ selectedSkylander.id }}.png" class="toy-image"></div>
-
-	<h1>{{ selectedSkylander.nameHonorific + ' ' + selectedSkylander.nameBase }}</h1>
-
-	<p>{{selectedSkylander.tagline}}</p>
+	<header>
+		<div class="detail-toy-image-container"><img ng-src="images/toys/{{ selectedSkylander.id }}.png" class="detail-toy-image"></div>
+		<div class="detail-title-byline-container">
+			<h1 class="detail-character-name">{{ selectedSkylander.nameHonorific + ' ' + selectedSkylander.nameBase }}</h1>
+			<h2>{{selectedSkylander.tagline}}</h2>
+		</div>
+	</header>
 	<p>{{selectedSkylander.story.start}}</p>
 	{{selectedSkylander.story.body}}
 
@@ -13,18 +15,10 @@
 	  </li>
 	</ul> -->
 
-	<ul class="specs">
-	<!--   <li>
-	    <span>Availability and Networks</span>
-	    <dl>
-	      <dt>Availability</dt>
-	      <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
-	    </dl>
-	  </li> -->
-	    ...
-	  <li>
-	    <span>Additional Features</span>
-	    <dd>{{phone.additionalFeatures}}</dd>
+	<ul class="details-stats-list">
+	  <li ng-repeat="stat_name in stat_names track by $index" >
+	    <span>{{ stat_name }}: </span>
+	    <span>{{ selectedSkylander.stats[$index] }}</span>
 	  </li>
 	</ul>
 </div>

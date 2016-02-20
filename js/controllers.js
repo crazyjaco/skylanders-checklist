@@ -32,6 +32,14 @@ skylandersControllers.controller('SkylanderAppCtrl', [ '$scope', '$routeParams',
 			});
 		}
 
+		$scope.stat_names = [
+			'power',
+			'armor',
+			'agility',
+			'luck',
+			'total'
+		];
+
 		$scope.games = [
 			{
 				id: 0,

@@ -87,7 +87,7 @@ skylandersControllers.controller('SkylanderDetailCtrl', [ '$scope', '$routeParam
 		$scope.setSelectedSkylander = function( $routeParams ){
 			$scope.selectedSkylanderId = $routeParams.skylanderId;
 			$scope.selectedSkylander = $scope.skylanders[$routeParams.skylanderId];
-			console.log('Selected Skylander:', $scope.skylanders);
+			console.log('Selected Skylander:', $scope.skylanders[$routeParams.skylanderId]);
 		}
 
 		$scope.setSelectedSkylander( $routeParams );

@@ -103,18 +103,56 @@ div .character-search {
 }
 
 .tpl-detail .stat-container {
-	width: 100%;
-	background-color: white;
+	background-color: #D2C7B9;
+	border-radius: 2px;
 }
 
 .tpl-detail .stat-bar {
-	width:  calc( attr( data-stat-value ) / attr( data-max-meter-value ) * 100 )px;
-	height: 5px;
-	background: blue;
+	border-radius: 2px;
+	height: 10px;
+	background: white;
 
 }
 
 
 
+
+
+
+/* Elements */
+
+.tech-icon   { height: 50px; width: 50px; background: url(/images/factions/icon-tech.svg) no-repeat center }
+.air-icon    { height: 50px; width: 50px; background: url(/images/factions/icon-air.svg) no-repeat center }
+.water-icon  { height: 50px; width: 50px; background: url(/images/factions/icon-water.svg) no-repeat center }
+.fire-icon   { height: 50px; width: 50px; background: url(/images/factions/icon-fire.svg) no-repeat center }
+.life-icon   { height: 50px; width: 50px; background: url(/images/factions/icon-life.svg) no-repeat center }
+.earth-icon  { height: 50px; width: 50px; background: url(/images/factions/icon-earth.svg) no-repeat center }
+.magic-icon  { height: 50px; width: 50px; background: url(/images/factions/icon-magic.svg) no-repeat center }
+.undead-icon { height: 50px; width: 50px; background: url(/images/factions/icon-undead.svg) no-repeat center }
+
+.dark-icon  { height: 50px; width: 50px; background: url(/images/factions/icon-dark.svg) no-repeat center }
+.light-icon { height: 50px; width: 50px; background: url(/images/factions/icon-light.svg) no-repeat center }
+
+/* Other */
+
+.giant-icon      { height: 50px; width: 50px; background: url(/images/factions/icon-giant.svg) no-repeat center }
+.mini-icon       { height: 50px; width: 50px; background: url(/images/factions/icon-minis.svg) no-repeat center }
+.swapforce-icon  { height: 50px; width: 50px; background: url(/images/factions/icon-swapforce.svg) no-repeat center }
+.lightcore-icon  { height: 50px; width: 50px; background: url(/images/factions/icon-lightcore.svg) no-repeat center }
+.trapMaster-icon { height: 50px; width: 50px; background: url(/images/factions/icon-trap-team.svg) no-repeat center }
+.eons-elite-icon { height: 50px; width: 50px; background: url(/images/factions/icon-eons-elite.svg) no-repeat center }
+.drivers-icon    { height: 50px; width: 50px; background: url(/images/factions/drivers-tech.svg) no-repeat center }
+.vehicles-icon   { height: 50px; width: 50px; background: url(/images/factions/vehicles-tech.svg) no-repeat center }
+.series2-icon    { height: 50px; width: 50px; background: url(/images/factions/icon-series2.svg) no-repeat center }
+.series3-icon    { height: 50px; width: 50px; background: url(/images/factions/icon-series3.svg) no-repeat center }
+.series4-icon    { height: 50px; width: 50px; background: url(/images/factions/icon-series4.svg) no-repeat center }
+
+.icon-container {
+	text-align: center;
+}
+
+.icon-container div {
+	display: inline-block;
+}
 
 /* -------------------------------------------*/

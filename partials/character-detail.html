@@ -10,12 +10,18 @@
 			<h2>{{selectedSkylander.tagline}}</h2>
 		</div>
 	</header>
+	<div class="icon-container">
+		<!--<div class="{{ games[selectedSkylander.game].iconClass }}"></div>-->
+		<div class="{{ selectedSkylander.element }}-icon"></div>
+		<div class="{{ attr_name }}-icon" ng-repeat="( attr_name, attr_val ) in selectedSkylander.is"></div>
+	</div>
+	<!-- element, version, is, game? -->
 	<ul class="details-stats-list">
 		<li ng-repeat="stat_name in stat_names track by $index" ng-show="!$last">
 			<span>{{ stat_name }}: </span>
-			<span>{{ selectedSkylander.stats[$index] }}</span>
-			<div class="stat-container" style="width: 200px;">
-				<div class="stat-bar" style="width: {{ ( selectedSkylander.stats[$index] / selectedSkylander.stats[4] ) * 200 }}px;">
+			<span>{{ selectedSkylander.stats[$index] }}/{{ selectedSkylander.stats[4] }}</span>
+			<div class="stat-container" style="width: 300px;">
+				<div class="stat-bar" style="width: {{ ( selectedSkylander.stats[$index] / selectedSkylander.stats[4] ) * 300 }}px;">
 			</div>
 		</li>
 	</ul>	

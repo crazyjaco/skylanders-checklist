@@ -48,12 +48,12 @@ div .character-search {
 
 .tpl-detail .detail-toy-image {
 	margin-top: -50px;
-	background-image: linear-gradient { to bottom,
+/*	background-image: linear-gradient { to bottom,
 		#AAA 0,
 		#AAA 250px, 
 		#444 240px,
 		#444 300px
-	};
+	};*/
 }
 
 .tpl-detail .detail-toy-image-container {
@@ -73,16 +73,14 @@ div .character-search {
 }
 
 .tpl-detail .detail-title-byline-container {
-    background-color: rgba(0, 0, 0, .6);
-    color: #FFF;
-    /* height: 34px; */
-    /* top: -34px; */
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 10px;
+	background-color: rgba(0, 0, 0, .6);
+	color: #FFF;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 10px;
 }
 
 /* Resets default behavior */
@@ -153,6 +151,8 @@ div .character-search {
 
 .icon-container div {
 	display: inline-block;
+	padding: 0 15px;
+	margin: 5px 16px;
 }
 
 /* -------------------------------------------*/

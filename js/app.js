@@ -2,7 +2,8 @@
 
 var skylandersApp = angular.module('skylandersApp', [
 	'ngRoute',
-	'skylandersControllers'
+	'skylandersControllers',
+	'skylandersFilters'
 ]);
 
 skylandersApp.config(['$routeProvider',

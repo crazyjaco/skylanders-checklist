@@ -97,7 +97,9 @@ div .character-search {
 
 .tpl-detail .details-stats-list {
 	list-style-type: none;
-	left: 100px;
+	padding: 0;
+	margin: 0 auto;
+	width: 300px;
 }
 
 .tpl-detail .stat-container {
@@ -112,7 +114,10 @@ div .character-search {
 
 }
 
-
+.tpl-detail .detail-bio {
+	font-size: 20px;
+	padding: 15px;
+}
 
 
 

@@ -18,14 +18,13 @@
 	<!-- element, version, is, game? -->
 	<ul class="details-stats-list">
 		<li ng-repeat="stat_name in stat_names track by $index" ng-show="!$last">
-			<span>{{ stat_name }}: </span>
+			<span>{{ stat_name | capitalizeFirstLetter }}: </span>
 			<span>{{ selectedSkylander.stats[$index] }}/{{ selectedSkylander.stats[4] }}</span>
 			<div class="stat-container" style="width: 300px;">
 				<div class="stat-bar" style="width: {{ ( selectedSkylander.stats[$index] / selectedSkylander.stats[4] ) * 300 }}px;">
 			</div>
 		</li>
 	</ul>	
-	<p>{{ selectedSkylander.story.start }}</p>
-	{{ selectedSkylander.story.body }}
+	<p class="detail-bio">{{ selectedSkylander.story.start }} {{ selectedSkylander.story.body | htmlToPlaintext }}</p>
 
 </div>

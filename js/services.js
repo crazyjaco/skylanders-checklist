@@ -1,0 +1,1 @@
+var skylanderServices = angular.module('skylanderServices', [] );

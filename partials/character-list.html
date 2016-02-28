@@ -8,10 +8,13 @@
 				<li ng-repeat="skylander in skylandersRaw.characters | filter:{ id: search }" class="row">
 					<a href="#/characters/{{ skylander.id }}">
 						<div class="character-container">
-							<span class="game-logo col-xs-4"><img ng-src="{{ games[skylander.game].logo }}"></span>
+							<span class="col-xs-3 list-item-element">
+								<div class="{{ skylander.element }}-icon"></div>
+							</span>
+							<span class="game-logo col-xs-2"><img ng-src="{{ games[skylander.game].logo }}"></span>
 							<span class="id col-xs-4">{{skylander.nameHonorific + ' ' + skylander.nameBase }}</span>
 							<!-- <span class="toy-image"><img src="http://skylanders.com/content/dam/atvi/skylanders/base/characters-v2/toy/{{ skylander.id }}.png"></span> -->
-							<span class="toy-image-thumb col-xs-4"><img ng-src="images/toys/{{ skylander.id }}.png"></span>
+							<div class="toy-image-thumb col-xs-3"><img ng-src="images/toys/{{ skylander.id }}.png"></span>
 							<!--<span class="tag-line">{{skylander.tagline}}</span>-->
 						</div>
 					</a>
